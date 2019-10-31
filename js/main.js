@@ -29,7 +29,8 @@
         e.preventDefault();
         const x = e.pageX - slider.offsetLeft;
         //Track how far px your mouse moves from the original click point
-        const walk = (x - startX) * 0.05;
+        const walk = x - startX;
         slider.scrollLeft = slider.scrollLeft - walk;
+        startX = e.pageX - slider.offsetLeft;
     });
 }());
